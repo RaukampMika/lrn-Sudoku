@@ -1,4 +1,6 @@
-﻿using Microsoft.UI;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -28,6 +30,10 @@ namespace Sudoku
         public MainWindow()
         {
             this.InitializeComponent();
+
+            Ioc.Default.ConfigureServices(new ServiceCollection()
+
+                .BuildServiceProvider());
         }
 
 
